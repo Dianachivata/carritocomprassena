@@ -22,7 +22,8 @@ class IncomeController extends Controller
      */
     public function create()
     {
-        return view('dashboard.income.create');
+        $person=person::all();
+        return view('dashboard.income.create',['person'=>$person]);
     }
 
     /**
@@ -31,13 +32,16 @@ class IncomeController extends Controller
     public function store(Request $request)
     {
         $income=new Income();
+        // $income->provider_id='1';
+        // $income->user_id='1'; 
+        $income->provider_id=$request->input('person');
         $income->receipt_type=$request->input('receipt_type');
         $income->receipt_series=$request->input('receipt_series');
         $income->receipt_number=$request->input('receipt_number');
         $income->date=$request->input('date');
         $income->tax=$request->input('tax');
         $income->total=$request->input('total');
-        $income->status=$request->input('status');
+        $income->status=$request->input('state');
         $income->save();
         return view("dashboard.income.message",['msg'=>"Ingreso agregada con exito"]);
     }

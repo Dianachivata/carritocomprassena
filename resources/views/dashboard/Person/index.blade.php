@@ -18,12 +18,14 @@
                 <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Correo electronico</th>
+                <th>FechaCreacion</th>
+                <th>FechaActualizacion</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($person as $Person)
+            @foreach ($person as $person)
             <tr>
                 <td scope="row">{{$person->id }}</td>
                 <td>{{$person->type}}</td>

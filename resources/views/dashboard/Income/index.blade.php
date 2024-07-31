@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Proveedor</th>
                 <th>Tipo de recibo</th>
                 <th>Serie de recibo</th>
                 <th>Numero de recibo</th>
@@ -27,6 +28,7 @@
             @foreach ($income as $income)
             <tr>
                 <td scope="row">{{$income->id}}</td>
+                <td>{{$income->provider_id}}</td>
                 <td>{{$income->receipt_type}}</td>
                 <td>{{$income->receipt_series}}</td>
                 <td>{{$income->receipt_number}}</td>

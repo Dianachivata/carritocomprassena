@@ -20,7 +20,9 @@ class PersonController extends Controller
      */
     public function create()
     {
-        return view('dashboard.person.create');
+       $providers = person::where('type','Proveedor');
+    //    $users = Auth::user();
+        return view('dashboard.person.create', ['provider'=>$providers]);
     }
 
     /**

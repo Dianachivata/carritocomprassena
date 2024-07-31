@@ -7,6 +7,12 @@
     <form action="{{route('person.store')}}" method="post">
         @csrf 
         <div class="form-group row">
+            <label for="provider_id" class="col-sm-2 col-form-label">Id proveedor</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="provider_id" id="provider_id" placeholder="Ingrese el nombre">
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="type" class="col-sm-2 col-form-label">Seleccione una opcion</label>
             <div class="col-sm-10">
                 <select class="form-control" name="type" id="type">

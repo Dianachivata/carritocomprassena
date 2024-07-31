@@ -7,6 +7,23 @@
     <form action="{{route('income.store')}}" method="post">
         @csrf 
         <div class="form-group row">
+            <label for="person" class="col-sm-2 col-form-label">Proveedor</label>
+            <div class="col-sm-10">
+                <select name="person" id="person" class="form-select" required>
+                    <option value="">Seleccionar Proveedor</option>
+                    @foreach ($person  as $person)
+                    <option value="{{$person->id}}">{{$person->name}}</option>   
+                    @endforeach 
+                </select>
+            </div>  
+         </div>
+        {{-- <div class="form-group row">
+            <label for="user_id">ID del Usuario</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="user_id" name="user_id">
+            </div>
+        </div> --}}
+        <div class="form-group row">
             <label for="receipt_type" class="col-sm-2 col-form-label">tipo de recibo</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="receipt_type" id="receipt_type" placeholder="Ingrese numero de documento">

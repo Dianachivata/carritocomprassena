@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Income extends Model
 {
     use HasFactory;
-    public function people(){
-        return $this->belongsTo(people::class,'provider_id','id');
+    public function person(){
+        return $this->belongsTo(person::class,'provider_id','id');
 }
+    use HasFactory;
+    public function user(){
+        return $this->belongsTo(user::class,'user_id','id');
+    }
 }
